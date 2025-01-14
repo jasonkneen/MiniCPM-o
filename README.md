@@ -1,30 +1,16 @@
 <div align="center">
 
-<img src="./assets/MiniCPM-o.png" width="300em" ></img> 
+![MiniCPM](./assets/MiniCPM-o.png)
 
 **A GPT-4o Level MLLM for Vision, Speech and Multimodal Live Streaming on Your Phone**
 
-  <strong>[中文](./README_zh.md) |
-  English</strong>
+**[中文](./README_zh.md) | English**
+
+[![WeChat](./assets/wechat.png) WeChat](docs/wechat.md) | [![Discord](./assets/discord.png) Discord](https://discord.gg/uQpn8kKx)
 
 
 
-<span style="display: inline-flex; align-items: center; margin-right: 2px;">
-  <img src="./assets/wechat.png" alt="WeChat" style="margin-right: 4px;">
-  <a href="docs/wechat.md" target="_blank"> WeChat</a> &nbsp;|
-</span>
-&nbsp;
-<span style="display: inline-flex; align-items: center; margin-left: -8px;">
-<img src="./assets/discord.png" alt="Discord" style="margin-right: 4px;">
-  <a href="https://discord.gg/uQpn8kKx" target="_blank"> Discord</a>  
-</span>
-
-
-
-<p align="center">
-  MiniCPM-o 2.6 <a href="https://huggingface.co/openbmb/MiniCPM-o-2_6">🤗</a> <a href="https://minicpm-omni-webdemo.modelbest.cn/"> CN🤖</a> <a href="https://minicpm-omni-webdemo-us.modelbest.cn/"> US🤖</a> | MiniCPM-V 2.6 <a href="https://huggingface.co/openbmb/MiniCPM-V-2_6">🤗</a> <a href="http://120.92.209.146:8887/">🤖</a> | 
-  Technical Blog Coming Soon
-</p>
+MiniCPM-o 2.6 [🤗](https://huggingface.co/openbmb/MiniCPM-o-2_6) [CN🤖](https://minicpm-omni-webdemo.modelbest.cn/) [US🤖](https://minicpm-omni-webdemo-us.modelbest.cn/) | MiniCPM-V 2.6 [🤗](https://huggingface.co/openbmb/MiniCPM-V-2_6) [🤖](http://120.92.209.146:8887/) | Technical Blog Coming Soon
 
 </div>
 
@@ -51,7 +37,6 @@
 
 * [2024.05.23] 🔥🔥🔥 MiniCPM-V tops GitHub Trending and Hugging Face Trending! Our demo, recommended by Hugging Face Gradio’s official account, is available [here](https://huggingface.co/spaces/openbmb/MiniCPM-Llama3-V-2_5). Come and try it out!
 
-<br>
 
 <details> 
 <summary>Click to view more news.</summary>
@@ -1008,17 +993,13 @@ All results are from AudioEvals, and the evaluation methods along with further d
 
 We deploy MiniCPM-o 2.6 on end devices. The demo video is the raw-speed recording on an iPad Pro and a Web demo.
 
-<div align="center">
-  <a href="https://youtu.be/JFJg9KZ_iZk"><img src="./assets/o-2dot6-demo-video-preview.png", width=70%></a>
-</div>
+[![Demo Video](./assets/o-2dot6-demo-video-preview.png)](https://youtu.be/JFJg9KZ_iZk)
 
 <br>
 
-<div style="display: flex; flex-direction: column; align-items: center;">
-  <img src="assets/minicpmo2_6/minicpmo2_6_math_intersect.png" alt="math" style="margin-bottom: 5px;">
-  <img src="assets/minicpmo2_6/minicpmo2_6_diagram_train_NN.png" alt="diagram" style="margin-bottom: 5px;">
-  <img src="assets/minicpmo2_6/minicpmo2_6_multi-image_bike.png" alt="bike" style="margin-bottom: 5px;">
-</div>
+![Math Intersection](assets/minicpmo2_6/minicpmo2_6_math_intersect.png)
+![Neural Network Diagram](assets/minicpmo2_6/minicpmo2_6_diagram_train_NN.png)
+![Bike Image](assets/minicpmo2_6/minicpmo2_6_multi-image_bike.png)
 
 
 ## MiniCPM-V 2.6
@@ -1872,9 +1853,7 @@ pip install -r requirements.txt
 
 Please refer to the following codes to run.
 
-<div align="center">
-<img src="assets/minicpmo2_6/show_demo.jpg" width="500px">
-</div>
+![Demo Screenshot](assets/minicpmo2_6/show_demo.jpg)
 
 
 ```python
