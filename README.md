@@ -1,16 +1,30 @@
 <div align="center">
 
-![MiniCPM](./assets/MiniCPM-o.png)
+<img src="./assets/MiniCPM-o.png" width="300em" ></img> 
 
 **A GPT-4o Level MLLM for Vision, Speech and Multimodal Live Streaming on Your Phone**
 
-**[中文](./README_zh.md) | English**
-
-[![WeChat](./assets/wechat.png) WeChat](docs/wechat.md) | [![Discord](./assets/discord.png) Discord](https://discord.gg/uQpn8kKx)
-
+  <strong>[中文](./README_zh.md) |
+  English</strong>
 
 
-MiniCPM-o 2.6 [🤗](https://huggingface.co/openbmb/MiniCPM-o-2_6) [CN🤖](https://minicpm-omni-webdemo.modelbest.cn/) [US🤖](https://minicpm-omni-webdemo-us.modelbest.cn/) | MiniCPM-V 2.6 [🤗](https://huggingface.co/openbmb/MiniCPM-V-2_6) [🤖](http://120.92.209.146:8887/) | Technical Blog Coming Soon
+
+<span style="display: inline-flex; align-items: center; margin-right: 2px;">
+  <img src="./assets/wechat.png" alt="WeChat" style="margin-right: 4px;">
+  <a href="docs/wechat.md" target="_blank"> WeChat</a> &nbsp;|
+</span>
+&nbsp;
+<span style="display: inline-flex; align-items: center; margin-left: -8px;">
+<img src="./assets/discord.png" alt="Discord" style="margin-right: 4px;">
+  <a href="https://discord.gg/uQpn8kKx" target="_blank"> Discord</a>  
+</span>
+
+
+
+<p align="center">
+  MiniCPM-o 2.6 <a href="https://huggingface.co/openbmb/MiniCPM-o-2_6">🤗</a>  <a href="https://minicpm-omni-webdemo-us.modelbest.cn/"> 🤖</a> | MiniCPM-V 2.6 <a href="https://huggingface.co/openbmb/MiniCPM-V-2_6">🤗</a> <a href="http://120.92.209.146:8887/">🤖</a> | 
+  Technical Blog Coming Soon
+</p>
 
 </div>
 
@@ -37,6 +51,7 @@ MiniCPM-o 2.6 [🤗](https://huggingface.co/openbmb/MiniCPM-o-2_6) [CN🤖](http
 
 * [2024.05.23] 🔥🔥🔥 MiniCPM-V tops GitHub Trending and Hugging Face Trending! Our demo, recommended by Hugging Face Gradio’s official account, is available [here](https://huggingface.co/spaces/openbmb/MiniCPM-Llama3-V-2_5). Come and try it out!
 
+<br>
 
 <details> 
 <summary>Click to view more news.</summary>
@@ -116,25 +131,24 @@ Advancing popular visual capabilites from MiniCPM-V series, MiniCPM-o 2.6 can pr
   In addition to its friendly size, MiniCPM-o 2.6 also shows **state-of-the-art token density** (i.e., number of pixels encoded into each visual token). **It produces only 640 tokens when processing a 1.8M pixel image, which is 75% fewer than most models**. This directly improves the inference speed, first-token latency, memory usage, and power consumption. As a result, MiniCPM-o 2.6 can efficiently support **multimodal live streaming** on end-side devices such as iPad.
 
 -  💫  **Easy Usage.**
-MiniCPM-o 2.6 can be easily used in various ways: (1) [llama.cpp](https://github.com/OpenBMB/llama.cpp/blob/minicpm-omni/examples/llava/README-minicpmo2.6.md) support for efficient CPU inference on local devices, (2) [int4](https://huggingface.co/openbmb/MiniCPM-o-2_6-int4) and [GGUF](https://huggingface.co/openbmb/MiniCPM-o-2_6-gguf) format quantized models in 16 sizes, (3) [vLLM](#efficient-inference-with-llamacpp-ollama-vllm) support for high-throughput and memory-efficient inference, (4) fine-tuning on new domains and tasks with [LLaMA-Factory](./docs/llamafactory_train.md), (5) quick local WebUI demo setup with [Gradio](#chat-with-our-demo-on-gradio), and (6) online web demo on [CN](https://minicpm-omni-webdemo.modelbest.cn/ 
-) server and [US](https://minicpm-omni-webdemo-us.modelbest.cn/) server.
+MiniCPM-o 2.6 can be easily used in various ways: (1) [llama.cpp](https://github.com/OpenBMB/llama.cpp/blob/minicpm-omni/examples/llava/README-minicpmo2.6.md) support for efficient CPU inference on local devices, (2) [int4](https://huggingface.co/openbmb/MiniCPM-o-2_6-int4) and [GGUF](https://huggingface.co/openbmb/MiniCPM-o-2_6-gguf) format quantized models in 16 sizes, (3) [vLLM](#efficient-inference-with-llamacpp-ollama-vllm) support for high-throughput and memory-efficient inference, (4) fine-tuning on new domains and tasks with [LLaMA-Factory](./docs/llamafactory_train.md), (5) quick [local WebUI demo](#chat-with-our-demo-on-gradio), and (6) online web demo on [server](https://minicpm-omni-webdemo-us.modelbest.cn/).
 
 
 **Model Architecture.**
 
-- **End-to-end Omni-modal Architecture.** Different modality encoder/decoders are connected and trained in an **end-to-end** fashion to fully exploit rich multimodal knowledge.
+- **End-to-end Omni-modal Architecture.** Different modality encoder/decoders are connected and trained in an **end-to-end** fashion to fully exploit rich multimodal knowledge. The model is trained in a fully end-to-end manner with only CE loss.
 - **Omni-modal Live Streaming Mechanism.** (1) We change the offline modality encoder/decoders into online ones for **streaminig inputs/outputs.** (2) We devise a **time-division multiplexing (TDM) mechanism** for omni-modality streaminig processing in the LLM backbone. It divides parallel omni-modality streams into sequential info within small periodic time slices. 
 - **Configurable Speech Modeling Design.** We devise a multimodal system prompt, including traditional text system prompt, and **a new audio system prompt to determine the assistant voice**. This enables flexible voice configurations in inference time, and also facilitates end-to-end voice cloning and description-based voice creation.
 
 <div align="center">
-<img src="./assets/minicpm-o-26-framework.png" , width=80%>
+<img src="./assets/minicpm-o-26-framework-v2.png" , width=80%>
 </div>
 
 
 ### Evaluation  <!-- omit in toc -->
 
 <div align="center">
-  <img src="./assets/radar.jpg", width=90%>
+  <img src="./assets/radar.jpg", width=80%>
 </div>
 
 <details>
@@ -214,7 +228,7 @@ MiniCPM-o 2.6 can be easily used in various ways: (1) [llama.cpp](https://github
             <td>3.4</td>
         </tr>
         <tr>
-            <td nowrap="nowrap" align="left">Gemini-1.5-Pro</td>
+            <td nowrap="nowrap" align="left">Gemini 1.5 Pro</td>
             <td>-</td>
             <td>-</td>
             <td>64.4</td>
@@ -385,7 +399,7 @@ MiniCPM-o 2.6 can be easily used in various ways: (1) [llama.cpp](https://github
             <td>3.5</td>
         </tr>
         <tr>
-            <td nowrap="nowrap" align="left">InternVL-2.5-8B</td>
+            <td nowrap="nowrap" align="left">InternVL2.5-8B</td>
             <td>8B</td>
             <td>706</td>
             <td>68.3</td>
@@ -467,8 +481,8 @@ Note: For proprietary models, we calculate token density based on the image enco
         <tr>
             <th align="left">Model</th>
             <th>Size</th>
-            <th>BLINK-val</th>
-            <th>Mantis-Eval</th>
+            <th>BLINK val</th>
+            <th>Mantis Eval</th>
             <th>MIRB</th>
             <th>Video-MME (wo / w subs)</th>
         </tr>
@@ -505,7 +519,7 @@ Note: For proprietary models, we calculate token density based on the image enco
             <td>-</td>
         </tr>
         <tr>
-            <td nowrap="nowrap" align="left">LLaVA-One-Vision-72B</td>
+            <td nowrap="nowrap" align="left">LLaVA-OneVision-72B</td>
             <td>72B</td>
             <td>55.4</td>
             <td><strong>77.6</strong></td>
@@ -529,7 +543,7 @@ Note: For proprietary models, we calculate token density based on the image enco
             <td>63.3/69.0</td>
         </tr>
         <tr>
-            <td nowrap="nowrap" align="left">InternVL-2.5-8B</td>
+            <td nowrap="nowrap" align="left">InternVL2.5-8B</td>
             <td>8B</td>
             <td>54.8</td>
             <td>67.7</td>
@@ -617,7 +631,7 @@ Note: For proprietary models, we calculate token density based on the image enco
             <td>33.2*</td>
         </tr>
         <tr>
-            <td nowrap="nowrap" align="left">Gemini-1.5-Pro</td>
+            <td nowrap="nowrap" align="left">Gemini 1.5 Pro</td>
             <td>-</td>
             <td>4.5*</td>
             <td>5.9*</td>
@@ -993,13 +1007,17 @@ All results are from AudioEvals, and the evaluation methods along with further d
 
 We deploy MiniCPM-o 2.6 on end devices. The demo video is the raw-speed recording on an iPad Pro and a Web demo.
 
-[![Demo Video](./assets/o-2dot6-demo-video-preview.png)](https://youtu.be/JFJg9KZ_iZk)
+<div align="center">
+  <a href="https://youtu.be/JFJg9KZ_iZk"><img src="./assets/o-2dot6-demo-video-preview.png", width=70%></a>
+</div>
 
 <br>
 
-![Math Intersection](assets/minicpmo2_6/minicpmo2_6_math_intersect.png)
-![Neural Network Diagram](assets/minicpmo2_6/minicpmo2_6_diagram_train_NN.png)
-![Bike Image](assets/minicpmo2_6/minicpmo2_6_multi-image_bike.png)
+<div style="display: flex; flex-direction: column; align-items: center;">
+  <img src="assets/minicpmo2_6/minicpmo2_6_math_intersect.png" alt="math" style="margin-bottom: 5px;">
+  <img src="assets/minicpmo2_6/minicpmo2_6_diagram_train_NN.png" alt="diagram" style="margin-bottom: 5px;">
+  <img src="assets/minicpmo2_6/minicpmo2_6_multi-image_bike.png" alt="bike" style="margin-bottom: 5px;">
+</div>
 
 
 ## MiniCPM-V 2.6
@@ -1029,7 +1047,7 @@ MiniCPM-V 2.6 can be easily used in various ways: (1) [llama.cpp](https://github
 
 ### Evaluation  <!-- omit in toc -->
 <div align="center">
-    <img src=assets/radar_final.png width=90% />
+    <img src=assets/radar_final.png width=80% />
 </div>
 
 <details>
@@ -1789,11 +1807,11 @@ We provide online and local demos powered by Hugging Face Gradio <a href='https:
 
 ### Online Demo <!-- omit in toc --> 
 
-Click here to try out the online demo of MiniCPM-o 2.6 ([CN](https://minicpm-omni-webdemo.modelbest.cn) | [US](https://minicpm-omni-webdemo-us.modelbest.cn/)) | [MiniCPM-V 2.6](http://120.92.209.146:8887/) | [MiniCPM-Llama3-V 2.5](https://huggingface.co/spaces/openbmb/MiniCPM-Llama3-V-2_5) | [MiniCPM-V 2.0](https://huggingface.co/spaces/openbmb/MiniCPM-V-2).
+Click here to try out the online demo of [MiniCPM-o 2.6](https://minicpm-omni-webdemo-us.modelbest.cn/) | [MiniCPM-V 2.6](http://120.92.209.146:8887/) | [MiniCPM-Llama3-V 2.5](https://huggingface.co/spaces/openbmb/MiniCPM-Llama3-V-2_5) | [MiniCPM-V 2.0](https://huggingface.co/spaces/openbmb/MiniCPM-V-2).
 
 ### Local WebUI Demo <!-- omit in toc --> 
   
-You can easily build your own local WebUI demo using the following commands.
+You can easily build your own local WebUI demo using the following commands, experience real-time streaming voice/video call.
 
 1. launch model server:
 ```shell
@@ -1818,15 +1836,15 @@ pnpm run dev  # start server
 1. Clone this repository and navigate to the source folder
 
 ```bash
-git clone https://github.com/OpenBMB/MiniCPM-V.git
-cd MiniCPM-V
+git clone https://github.com/OpenBMB/MiniCPM-o.git
+cd MiniCPM-o
 ```
 
 2. Create conda environment
 
 ```Shell
-conda create -n MiniCPM-V python=3.10 -y
-conda activate MiniCPM-V
+conda create -n MiniCPM-o python=3.10 -y
+conda activate MiniCPM-o
 ```
 
 3. Install dependencies
@@ -1853,7 +1871,9 @@ pip install -r requirements.txt
 
 Please refer to the following codes to run.
 
-![Demo Screenshot](assets/minicpmo2_6/show_demo.jpg)
+<div align="center">
+<img src="assets/minicpmo2_6/show_demo.jpg" width="500px">
+</div>
 
 
 ```python
@@ -2521,18 +2541,18 @@ This project is developed by the following institutions:
   <source
     media="(prefers-color-scheme: dark)"
     srcset="
-      https://api.star-history.com/svg?repos=OpenBMB/MiniCPM-V&type=Date&theme=dark
+      https://api.star-history.com/svg?repos=OpenBMB/MiniCPM-o&type=Date&theme=dark
     "
   />
   <source
     media="(prefers-color-scheme: light)"
     srcset="
-      https://api.star-history.com/svg?repos=OpenBMB/MiniCPM-V&type=Date
+      https://api.star-history.com/svg?repos=OpenBMB/MiniCPM-o&type=Date
     "
   />
   <img
     alt="Star History Chart"
-    src="https://api.star-history.com/svg?repos=OpenBMB/MiniCPM-V&type=Date"
+    src="https://api.star-history.com/svg?repos=OpenBMB/MiniCPM-o&type=Date"
   />
 </picture> -->
 
