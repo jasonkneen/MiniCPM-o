@@ -3,7 +3,7 @@ import { setNewUserId, getNewUserId } from './useRandomId';
 
 // 创建实例时配置默认值
 const service = axios.create({
-    baseURL: '/',
+    baseURL: import.meta.env.VITE_API_URL || '/',
     timeout: 30000,
     responseType: 'json'
 });

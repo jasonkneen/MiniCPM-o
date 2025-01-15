@@ -5,7 +5,7 @@ from PIL import Image
 import base64
 import io
 from accelerate import load_checkpoint_and_dispatch, init_empty_weights
-from transformers import AutoTokenizer, AutoModel
+from transformers import AutoTokenizer, AutoModel, LlamaTokenizer
 
 from omnilmm.utils import disable_torch_init
 from omnilmm.model.omnilmm import OmniLMMForCausalLM
@@ -16,16 +16,23 @@ DEFAULT_IMAGE_TOKEN = "<image>"
 DEFAULT_IMAGE_PATCH_TOKEN = "<im_patch>"
 DEFAULT_IM_START_TOKEN = "<im_start>"
 DEFAULT_IM_END_TOKEN = "<im_end>"
+    19|
 
-    
+    def get_device():
+        if torch.cuda.is_available():
+            return 'cuda'
+        elif torch.backends.mps.is_available():
+            return 'mps'
+        return 'cpu'
 
-def init_omni_lmm(model_path):
+    def init_omni_lmm(model_path):
     torch.backends.cuda.matmul.allow_tf32 = True
     disable_torch_init()
     model_name = os.path.expanduser(model_path)
     print(f'Load omni_lmm model and tokenizer from {model_name}')
-    tokenizer = AutoTokenizer.from_pretrained(
-        model_name, model_max_length=2048)
+    tokenizer = LlamaTokenizer.from_pretrained(
+        model_name,
+        model_max_length=2048)
 
     if False:
         # model on multiple devices for small size gpu memory (Nvidia 3090 24G x2) 
@@ -35,9 +42,10 @@ def init_omni_lmm(model_path):
                     device_map="auto",  no_split_module_classes=['Eva','MistralDecoderLayer', 'ModuleList', 'Resampler']
         )
     else:
+        device = get_device()
         model = OmniLMMForCausalLM.from_pretrained(
-            model_name, tune_clip=True, torch_dtype=torch.bfloat16
-        ).to(device='cuda', dtype=torch.bfloat16)
+            model_name, tune_clip=True, torch_dtype=torch.float16
+        ).to(device=device, dtype=torch.float16)
 
     image_processor = build_transform(
         is_train=False, input_size=model.model.config.image_size, std_mode='OPENAI_CLIP')
@@ -94,9 +102,10 @@ class OmniLMM12B:
 
     def decode(self, image, input_ids):
         with torch.inference_mode():
-            output = self.model.generate_vllm(
-                input_ids=input_ids.unsqueeze(0).cuda(),
-                images=image.unsqueeze(0).half().cuda(),
+            device = get_device()
+            input_ids=input_ids.unsqueeze(0).to(device),
+            images=image.unsqueeze(0).half().to(device),
+            temperature=0.6,
                 temperature=0.6,
                 max_new_tokens=1024,
                 # num_beams=num_beams,

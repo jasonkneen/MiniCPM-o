@@ -87,17 +87,53 @@ class StreamManager:
         self.customized_options = None
 
         # Omni model
-        self.target_dtype = torch.bfloat16
-        self.device='cuda:0'
+        self.target_dtype = torch.float16
+
+        # Initialize device - try MPS first, fallback to CPU
+        try:
+            if torch.backends.mps.is_available():
+                self.device = 'mps'
+                # Verify device works by creating a test tensor
+                test_tensor = torch.zeros(1).to(self.device)
+            else:
+                self.device = 'cpu'
+        except Exception as e:
+            logger.warning(f"MPS initialization failed: {str(e)}, falling back to CPU")
+            self.device = 'cpu'
+            
+        logger.info(f"Using device: {self.device}")
         
         self.minicpmo_model_path = args.model #"openbmb/MiniCPM-o-2_6"
         self.model_version = "2.6"
-        with torch.no_grad():
-            self.minicpmo_model = AutoModel.from_pretrained(self.minicpmo_model_path, trust_remote_code=True, torch_dtype=self.target_dtype, attn_implementation='sdpa')
-        self.minicpmo_tokenizer = AutoTokenizer.from_pretrained(self.minicpmo_model_path, trust_remote_code=True)
-        self.minicpmo_model.init_tts()
-        # self.minicpmo_model.tts.float()
-        self.minicpmo_model.to(self.device).eval()
+        try:
+            with torch.no_grad():
+                # Initialize model with device and dtype settings
+                self.minicpmo_model = AutoModel.from_pretrained(
+                    self.minicpmo_model_path,
+                    trust_remote_code=True,
+                    torch_dtype=self.target_dtype,
+                    attn_implementation='sdpa',
+                    device_map=self.device
+                )
+                self.minicpmo_tokenizer = AutoTokenizer.from_pretrained(
+                    self.minicpmo_model_path,
+                    trust_remote_code=True
+                )
+                
+                # Initialize TTS with proper error handling
+                try:
+                    self.minicpmo_model.init_tts()
+                except Exception as e:
+                    logger.error(f"TTS initialization failed: {str(e)}")
+                    raise
+                
+                # Ensure model is on correct device and in eval mode
+                self.minicpmo_model.to(self.device).eval()
+                logger.info("Model successfully loaded and moved to device")
+        except Exception as e:
+            logger.error(f"Model initialization failed: {str(e)}")
+            raise
+            
 
         self.ref_path_video_default = "assets/ref_audios/video_default.wav"
         self.ref_path_default = "assets/ref_audios/default.wav"
@@ -144,8 +180,8 @@ class StreamManager:
     def move_to_device(self, obj, device):
         if isinstance(obj, torch.Tensor):
             obj_ = obj.to(device)
-            if (obj_.dtype == torch.float) or (obj_.dtype == torch.half):
-                # cast to `torch.bfloat16`
+            # Cast floating point tensors to float16 for MPS compatibility
+            if obj_.is_floating_point():
                 obj_ = obj_.to(self.target_dtype)
             return obj_
         elif isinstance(obj, dict):
@@ -183,8 +219,13 @@ class StreamManager:
             output_wav.setnchannels(n_channels)
             output_wav.setsampwidth(sampwidth)
             output_wav.setframerate(framerate)
-            output_wav.setcomptype(comptype, compname)
-        
+            try:
+                vocos = Vocos(feature_extractor, backbone, head)
+                vocos = vocos.to(self.device).eval().to(torch.float32)
+                logger.info("Vocos initialization successful")
+            except Exception as e:
+                logger.error(f"Vocos initialization failed: {str(e)}")
+                raise
             for wav_bytes in input_bytes_list:
                 with wave.open(io.BytesIO(wav_bytes), 'rb') as wav:
                     output_wav.writeframes(wav.readframes(wav.getnframes()))
