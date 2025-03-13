@@ -23,16 +23,16 @@
 
 <p align="center">
   MiniCPM-o 2.6 <a href="https://huggingface.co/openbmb/MiniCPM-o-2_6">🤗</a>  <a href="https://minicpm-omni-webdemo-us.modelbest.cn/"> 🤖</a> | MiniCPM-V 2.6 <a href="https://huggingface.co/openbmb/MiniCPM-V-2_6">🤗</a> <a href="http://120.92.209.146:8887/">🤖</a> | 
-  Technical Blog Coming Soon
+  📄 Technical Blog [<a href="https://openbmb.notion.site/MiniCPM-o-2-6-A-GPT-4o-Level-MLLM-for-Vision-Speech-and-Multimodal-Live-Streaming-on-Your-Phone-185ede1b7a558042b5d5e45e6b237da9">English</a>/<a href="https://openbmb.notion.site/MiniCPM-o-2-6-GPT-4o-188ede1b7a558084b3aedd669cb80730">中文</a>]
 </p>
 
 </div>
 
-**MiniCPM-o** is the latest series of end-side multimodal LLMs (MLLMs) ungraded from MiniCPM-V. The models can now take image, video, text, and audio as inputs and provide high-quality text and speech outputs in an end-to-end fashion. Since February 2024, we have released 6 versions of the model, aiming to achieve **strong performance and efficient deployment**. The most notable models in the series currently include:
+**MiniCPM-o** is the latest series of end-side multimodal LLMs (MLLMs) ungraded from MiniCPM-V. The models can now take images, video, text, and audio as inputs and provide high-quality text and speech outputs in an end-to-end fashion. Since February 2024, we have released 6 versions of the model, aiming to achieve **strong performance and efficient deployment**. The most notable models in the series currently include:
 
 - **MiniCPM-o 2.6**: 🔥🔥🔥 The latest and most capable model in the MiniCPM-o series. With a total of 8B parameters, this end-to-end model **achieves comparable performance to GPT-4o-202405 in vision, speech, and multimodal live streaming**, making it one of the most versatile and performant models in the open-source community. For the new voice mode, MiniCPM-o 2.6 **supports bilingual real-time speech conversation with configurable voices**, and also allows for fun capabilities such as emotion/speed/style control, end-to-end voice cloning, role play, etc. It also advances MiniCPM-V 2.6's visual capabilities such **strong OCR capability, trustworthy behavior, multilingual support, and video understanding**. Due to its superior token density, MiniCPM-o 2.6 can for the first time **support multimodal live streaming on end-side devices** such as iPad.
 
-- **MiniCPM-V 2.6**: The most capable model in the MiniCPM-V series. With a total of 8B parameters, the model **surpasses GPT-4V in single image, multi-image and video understanding**. It outperforms **GPT-4o mini, Gemini 1.5 Pro and Claude 3.5 Sonnet** in single image understanding, and can for the first time support real-time video understanding on iPad.
+- **MiniCPM-V 2.6**: The most capable model in the MiniCPM-V series. With a total of 8B parameters, the model **surpasses GPT-4V in single-image, multi-image and video understanding**. It outperforms **GPT-4o mini, Gemini 1.5 Pro and Claude 3.5 Sonnet** in single image understanding, and can for the first time support real-time video understanding on iPad.
 
 
 
@@ -40,8 +40,19 @@
 
 #### 📌 Pinned
 
-* [2025.01.13] 🔥🔥🔥 We open-source MiniCPM-o 2.6, which matches GPT-4o-202405 on vision, speech and multimodal live streaming. It advances popular capabitlies of MiniCPM-V 2.6, and supports various new fun features. Try it now!
+* [2025.03.01] 🚀🚀🚀 RLAIF-V, which is the alignment technique of MiniCPM-o, is accepted by CVPR 2025！The [code](https://github.com/RLHF-V/RLAIF-V), [dataset](https://huggingface.co/datasets/openbmb/RLAIF-V-Dataset), [paper](https://arxiv.org/abs/2405.17220) are open-sourced!
 
+* [2025.01.24] 📢📢📢 MiniCPM-o 2.6 technical report is released! See [here](https://openbmb.notion.site/MiniCPM-o-2-6-A-GPT-4o-Level-MLLM-for-Vision-Speech-and-Multimodal-Live-Streaming-on-Your-Phone-185ede1b7a558042b5d5e45e6b237da9).
+
+* [2025.01.23] 💡💡💡 MiniCPM-o 2.6 is now supported by [Align-Anything](https://github.com/PKU-Alignment/align-anything), a framework by PKU-Alignment Team for aligning any-to-any modality large models with human intentions. It supports DPO and SFT fine-tuning on both vision and audio. Try it now!
+
+* [2025.01.19] 📢 **ATTENTION!** We are currently working on merging MiniCPM-o 2.6 into the official repositories of llama.cpp, ollama, and vllm. Until the merge is complete, please USE OUR LOCAL FORKS of [llama.cpp](https://github.com/OpenBMB/llama.cpp/blob/minicpm-omni/examples/llava/README-minicpmo2.6.md), [ollama](https://github.com/OpenBMB/ollama/blob/minicpm-v2.6/examples/minicpm-v2.6/README.md), and [vllm](https://github.com/OpenBMB/MiniCPM-o?tab=readme-ov-file#efficient-inference-with-llamacpp-ollama-vllm). **Using the official repositories before the merge may lead to unexpected issues**.
+
+* [2025.01.19] ⭐️⭐️⭐️ MiniCPM-o tops GitHub Trending and reaches top-2 on Hugging Face Trending!
+
+* [2025.01.17] We have updated the usage of MiniCPM-o 2.6 int4 quantization version and resolved the model initialization error. Click [here](https://huggingface.co/openbmb/MiniCPM-o-2_6-int4) and try it now!
+
+* [2025.01.13] 🔥🔥🔥 We open-source MiniCPM-o 2.6, which matches GPT-4o-202405 on vision, speech and multimodal live streaming. It advances popular capabilities of MiniCPM-V 2.6, and supports various new fun features. Try it now!
 
 * [2024.08.17] 🚀🚀🚀 MiniCPM-V 2.6 is now fully supported by [official](https://github.com/ggerganov/llama.cpp) llama.cpp! GGUF models of various sizes are available [here](https://huggingface.co/openbmb/MiniCPM-V-2_6-gguf).
 
@@ -90,21 +101,22 @@
 - [MiniCPM-o 2.6](#minicpm-o-26)
 - [MiniCPM-V 2.6](#minicpm-v-26)
 - [Chat with Our Demo on Gradio 🤗](#chat-with-our-demo-on-gradio-)
-- [Install](#install)
 - [Inference](#inference)
   - [Model Zoo](#model-zoo)
   - [Multi-turn Conversation](#multi-turn-conversation)
     - [Chat with Multiple Images](#chat-with-multiple-images)
     - [In-context Few-shot Learning](#in-context-few-shot-learning)
     - [Chat with Video](#chat-with-video)
-    - [Speech Conversation](#speech-conversation)
+    - [Speech and Audio Mode](#speech-and-audio-mode)
       - [Mimick](#mimick)
       - [General Speech Conversation with Configurable Voices](#general-speech-conversation-with-configurable-voices)
-      - [Addressing Various Audio Tasks](#addressing-various-audio-tasks)
+      - [Speech Conversation as an AI Assistant](#speech-conversation-as-an-ai-assistant)
+      - [Instruction-to-Speech](#instruction-to-speech)
+      - [Voice Cloning](#voice-cloning)
+      - [Addressing Various Audio Understanding Tasks](#addressing-various-audio-understanding-tasks)
     - [Multimodal Live Streaming](#multimodal-live-streaming)
   - [Inference on Multiple GPUs](#inference-on-multiple-gpus)
   - [Inference on Mac](#inference-on-mac)
-  - [Deployment on Mobile Phone](#deployment-on-mobile-phone)
   - [Efficient Inference with llama.cpp, ollama, vLLM](#efficient-inference-with-llamacpp-ollama-vllm)
 - [Fine-tuning](#fine-tuning)
 - [FAQs](#faqs)
@@ -116,28 +128,27 @@
 **MiniCPM-o 2.6** is the latest and most capable model in the MiniCPM-o series. The model is built in an end-to-end fashion based on SigLip-400M, Whisper-medium-300M, ChatTTS-200M, and Qwen2.5-7B with a total of 8B parameters. It exhibits a significant performance improvement over MiniCPM-V 2.6, and introduces new features for real-time speech conversation and multimodal live streaming. Notable features of MiniCPM-o 2.6 include:
 
 - 🔥 **Leading Visual Capability.**
-  MiniCPM-o 2.6 achieves an average score of 70.2 on OpenCompass, a comprehensive evaluation over 8 popular benchmarks. **With only 8B parameters, it surpasses widely used proprietary models like GPT-4o-202405, Gemini 1.5 Pro, and Claude 3.5 Sonnet** for single image understanding. It also **outperforms GPT-4V and Claude 3.5 Sonnet** in mutli-image and video understanding, and shows promising in-context learning capability.
+  MiniCPM-o 2.6 achieves an average score of 70.2 on OpenCompass, a comprehensive evaluation of 8 popular benchmarks. **With only 8B parameters, it surpasses widely used proprietary models like GPT-4o-202405, Gemini 1.5 Pro, and Claude 3.5 Sonnet** for single image understanding. It also **outperforms GPT-4V and Claude 3.5 Sonnet** in multi-image and video understanding, and shows promising in-context learning capability.
 
 - 🎙 **State-of-the-art Speech Capability.** MiniCPM-o 2.6 supports **bilingual real-time speech conversation with configurable voices** in English and Chinese. It **outperforms GPT-4o-realtime on audio understanding tasks** such as ASR and STT translation, and shows **state-of-the-art performance on speech conversation in both semantic and acoustic evaluations in the open-source community**. It also allows for fun features such as emotion/speed/style control, end-to-end voice cloning, role play, etc.
 
-- 🎬 **Strong Multimodal Live Streaming Capability.** As a new feature, MiniCPM-o 2.6 can **accept continous video and audio streams independent of user queries, and support real-time speech interaction**. It **outperforms GPT-4o-202408 and Claude 3.5 Sonnet and shows state-of-art performance in open-source community on StreamingBench**, a comprehensive benchmark for real-time video understanding, omni-source (video & audio) understanding, and multimodal contextual understanding.										
+- 🎬 **Strong Multimodal Live Streaming Capability.** As a new feature, MiniCPM-o 2.6 can **accept continuous video and audio streams independent of user queries, and support real-time speech interaction**. It **outperforms GPT-4o-202408 and Claude 3.5 Sonnet and shows state-of-art performance in the open-source community on StreamingBench**, a comprehensive benchmark for real-time video understanding, omni-source (video & audio) understanding, and multimodal contextual understanding.										
 
 - 💪 **Strong OCR Capability and Others.**
-Advancing popular visual capabilites from MiniCPM-V series, MiniCPM-o 2.6 can process images with any aspect ratio and up to 1.8 million pixels (e.g., 1344x1344). It achieves **state-of-the-art performance on OCRBench for models under 25B, surpassing proprietary models such as GPT-4o-202405**.
+Advancing popular visual capabilities from MiniCPM-V series, MiniCPM-o 2.6 can process images with any aspect ratio and up to 1.8 million pixels (e.g., 1344x1344). It achieves **state-of-the-art performance on OCRBench for models under 25B, surpassing proprietary models such as GPT-4o-202405**.
   Based on the the latest [RLAIF-V](https://github.com/RLHF-V/RLAIF-V/) and [VisCPM](https://github.com/OpenBMB/VisCPM) techniques, it features **trustworthy behaviors**, outperforming GPT-4o and Claude 3.5 Sonnet on MMHal-Bench, and supports **multilingual capabilities** on more than 30 languages.
 
 
 - 🚀 **Superior Efficiency.**
-  In addition to its friendly size, MiniCPM-o 2.6 also shows **state-of-the-art token density** (i.e., number of pixels encoded into each visual token). **It produces only 640 tokens when processing a 1.8M pixel image, which is 75% fewer than most models**. This directly improves the inference speed, first-token latency, memory usage, and power consumption. As a result, MiniCPM-o 2.6 can efficiently support **multimodal live streaming** on end-side devices such as iPad.
+  In addition to its friendly size, MiniCPM-o 2.6 also shows **state-of-the-art token density** (i.e., the number of pixels encoded into each visual token). **It produces only 640 tokens when processing a 1.8M pixel image, which is 75% fewer than most models**. This directly improves the inference speed, first-token latency, memory usage, and power consumption. As a result, MiniCPM-o 2.6 can efficiently support **multimodal live streaming** on end-side devices such as iPads.
 
 -  💫  **Easy Usage.**
-MiniCPM-o 2.6 can be easily used in various ways: (1) [llama.cpp](https://github.com/OpenBMB/llama.cpp/blob/minicpm-omni/examples/llava/README-minicpmo2.6.md) support for efficient CPU inference on local devices, (2) [int4](https://huggingface.co/openbmb/MiniCPM-o-2_6-int4) and [GGUF](https://huggingface.co/openbmb/MiniCPM-o-2_6-gguf) format quantized models in 16 sizes, (3) [vLLM](#efficient-inference-with-llamacpp-ollama-vllm) support for high-throughput and memory-efficient inference, (4) fine-tuning on new domains and tasks with [LLaMA-Factory](./docs/llamafactory_train.md), (5) quick [local WebUI demo](#chat-with-our-demo-on-gradio), and (6) online web demo on [server](https://minicpm-omni-webdemo-us.modelbest.cn/).
-
+MiniCPM-o 2.6 can be easily used in various ways: (1) [llama.cpp](https://github.com/OpenBMB/llama.cpp/blob/minicpm-omni/examples/llava/README-minicpmo2.6.md) support for efficient CPU inference on local devices, (2) [int4](https://huggingface.co/openbmb/MiniCPM-o-2_6-int4) and [GGUF](https://huggingface.co/openbmb/MiniCPM-o-2_6-gguf) format quantized models in 16 sizes, (3) [vLLM](#efficient-inference-with-llamacpp-ollama-vllm) support for high-throughput and memory-efficient inference, (4) fine-tuning on new domains and tasks with [LLaMA-Factory](./docs/llamafactory_train_and_infer.md), (5) quick [local WebUI demo](#chat-with-our-demo-on-gradio), and (6) online web demo on [server](https://minicpm-omni-webdemo-us.modelbest.cn/).
 
 **Model Architecture.**
 
-- **End-to-end Omni-modal Architecture.** Different modality encoder/decoders are connected and trained in an **end-to-end** fashion to fully exploit rich multimodal knowledge. The model is trained in a fully end-to-end manner with only CE loss.
-- **Omni-modal Live Streaming Mechanism.** (1) We change the offline modality encoder/decoders into online ones for **streaminig inputs/outputs.** (2) We devise a **time-division multiplexing (TDM) mechanism** for omni-modality streaminig processing in the LLM backbone. It divides parallel omni-modality streams into sequential info within small periodic time slices. 
+- **End-to-end Omni-modal Architecture.** Different modality encoders/decoders are connected and trained in an **end-to-end** fashion to fully exploit rich multimodal knowledge. The model is trained in a fully end-to-end manner with only CE loss.
+- **Omni-modal Live Streaming Mechanism.** (1) We change the offline modality encoder/decoders into online ones for **streaming inputs/outputs.** (2) We devise a **time-division multiplexing (TDM) mechanism** for omni-modality streaming processing in the LLM backbone. It divides parallel omni-modality streams into sequential info within small periodic time slices. 
 - **Configurable Speech Modeling Design.** We devise a multimodal system prompt, including traditional text system prompt, and **a new audio system prompt to determine the assistant voice**. This enables flexible voice configurations in inference time, and also facilitates end-to-end voice cloning and description-based voice creation.
 
 <div align="center">
@@ -336,6 +347,27 @@ MiniCPM-o 2.6 can be easily used in various ways: (1) [llama.cpp](https://github
             <td>-</td>
         </tr>
         <tr>
+            <td nowrap="nowrap" align="left">VITA-1.5</td>
+            <td>8B</td>
+            <td>784</td>
+            <td>63.3</td>
+            <td>741</td>
+            <td>66.2</td>
+            <td>-</td>
+            <td>52.7</td>
+            <td>60.2</td>
+            <td>2328.1</td>
+            <td>76.8</td>
+            <td>79.2</td>
+            <td>52.6</td>
+            <td>44.6</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+        </tr>
+        <tr>
             <td nowrap="nowrap" align="left">DeepSeek-VL2-27B (4B)</td>
             <td>27B</td>
             <td>672</td>
@@ -511,6 +543,14 @@ Note: For proprietary models, we calculate token density based on the image enco
             <td colspan="6" align="left"><strong>Open-source</strong></td>
         </tr>
         <tr>
+            <td nowrap="nowrap" align="left">VITA-1.5</td>
+            <td>8B</td>
+            <td>45.0</td>
+            <td>-</td>
+            <td>-</td>
+            <td>56.1/58.7</td>
+        </tr>
+        <tr>
             <td nowrap="nowrap" align="left">LLaVA-NeXT-Interleave 14B</td>
             <td>14B</td>
             <td>52.6</td>
@@ -672,6 +712,19 @@ Note: For proprietary models, we calculate token density based on the image enco
             <td>22.9*</td>
             <td>17.4*</td>
         </tr>
+          <tr>
+            <td nowrap="nowrap" align="left">VITA-1.5</td>
+            <td>8B</td>
+            <td>2.16</td>
+            <td>-</td>
+            <td>8.4</td>
+            <td>3.4</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+        </tr>
         <tr>
             <td nowrap="nowrap" align="left">GLM-4-Voice-Base</td>
             <td>9B</td>
@@ -778,6 +831,19 @@ Note: For proprietary models, we calculate token density based on the image enco
             <td>897</td>
             <td>3.2</td>
             <td>24.3</td>
+        </tr>
+        <tr>
+            <td nowrap="nowrap" align="left">VITA-1.5</td>
+            <td>8B</td>
+            <td>46.7</td>
+            <td>28.1</td>
+            <td>23.3</td>
+            <td>2.0</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
         </tr>
         <tr>
             <td nowrap="nowrap" align="left">Moshi</td>
@@ -1008,7 +1074,7 @@ All results are from AudioEvals, and the evaluation methods along with further d
 We deploy MiniCPM-o 2.6 on end devices. The demo video is the raw-speed recording on an iPad Pro and a Web demo.
 
 <div align="center">
-  <a href="https://youtu.be/JFJg9KZ_iZk"><img src="./assets/o-2dot6-demo-video-preview.png", width=70%></a>
+  <a href="https://www.youtube.com/watch?v=vRIMbxJzStY&t=2s"><img src="./assets/minicpmo2_6/2dot6_o_demo_video_img.png", width=70%></a>
 </div>
 
 <br>
@@ -1811,8 +1877,13 @@ Click here to try out the online demo of [MiniCPM-o 2.6](https://minicpm-omni-we
 
 ### Local WebUI Demo <!-- omit in toc --> 
   
-You can easily build your own local WebUI demo using the following commands, experience real-time streaming voice/video call.
+You can easily build your own local WebUI demo using the following commands.
 
+Please ensure that `transformers==4.44.2` is installed, as other versions may have compatibility issues.
+
+If you are using an older version of PyTorch, you might encounter this issue `"weight_norm_fwd_first_dim_kernel" not implemented for 'BFloat16'`, Please add `self.minicpmo_model.tts.float()` during the model initialization.
+
+**For real-time voice/video call demo:**
 1. launch model server:
 ```shell
 pip install -r requirements_o2.6.txt
@@ -1824,34 +1895,27 @@ python web_demos/minicpm-o_2.6/model_server.py
 
 ```shell
 # Make sure Node and PNPM is installed.
-cd web_demos/minicpm-o_2.6/web_server
-pnpm install  # install requirements
+sudo apt-get update
+sudo apt-get install nodejs npm
+npm install -g pnpm
 
+
+cd web_demos/minicpm-o_2.6/web_server
+# create ssl cert for https, https is required to request camera and microphone permissions.
+bash ./make_ssl_cert.sh  # output key.pem and cert.pem
+
+pnpm install  # install requirements
 pnpm run dev  # start server
 ```
+Open `https://localhost:8088/` in browser and enjoy the real-time voice/video call.
 
-
-## Install
-
-1. Clone this repository and navigate to the source folder
-
-```bash
-git clone https://github.com/OpenBMB/MiniCPM-o.git
-cd MiniCPM-o
-```
-
-2. Create conda environment
-
-```Shell
-conda create -n MiniCPM-o python=3.10 -y
-conda activate MiniCPM-o
-```
-
-3. Install dependencies
-
+**For chatbot demo:**
 ```shell
-pip install -r requirements.txt
+pip install -r requirements_o2.6.txt
+
+python web_demos/minicpm-o_2.6/chatbot_web_demo_o2.6.py
 ```
+Open `http://localhost:8000/` in browser and enjoy the vision mode chatbot.
 
 ## Inference
 
@@ -1868,6 +1932,11 @@ pip install -r requirements.txt
 | MiniCPM-V 2.6 int4 | GPU | 7 GB  | The int4 quantized version, lower GPU memory usage.   |  [🤗](https://huggingface.co/openbmb/MiniCPM-V-2_6-int4) &nbsp;&nbsp; [<img src="./assets/modelscope_logo.png" width="20px"></img>](https://modelscope.cn/models/OpenBMB/MiniCPM-V-2_6-int4) |
 
 ### Multi-turn Conversation
+
+Please ensure that `transformers==4.44.2` is installed, as other versions may have compatibility issues. We are investigating this issue.
+```shell
+pip install -r requirements_o2.6.txt
+```
 
 Please refer to the following codes to run.
 
@@ -2037,8 +2106,10 @@ print(answer)
 </details>
 
 
-#### Speech Conversation
-<details> <summary> Model initialization </summary>
+
+#### Speech and Audio Mode
+
+Model initialization
 
 ```python
 import torch
@@ -2054,18 +2125,22 @@ model.init_tts()
 model.tts.float()
 ```
 
-</details>
+<hr/>
 
 ##### Mimick
-
-<details> <summary>Click here to experience the capability of end-to-end audio understanding and generation. </summary>
 
 `Mimick` task reflects a model's end-to-end speech modeling capability. The model takes audio input, and outputs an ASR transcription and subsequently reconstructs the original audio with high similarity. The higher the similarity between the reconstructed audio and the original audio, the stronger the model's foundational capability in end-to-end speech modeling.
 
 ```python
 mimick_prompt = "Please repeat each user's speech, including voice style and speech content."
-audio_input, _ = librosa.load('xxx.wav', sr=16000, mono=True)
-msgs = [{'role': 'user', 'content': [mimick_prompt,audio_input]}]
+audio_input, _ = librosa.load('./assets/input_examples/Trump_WEF_2018_10s.mp3', sr=16000, mono=True) # load the audio to be mimicked
+
+# `./assets/input_examples/fast-pace.wav`, 
+# `./assets/input_examples/chi-english-1.wav` 
+# `./assets/input_examples/exciting-emotion.wav` 
+# for different aspects of speech-centric features.
+
+msgs = [{'role': 'user', 'content': [mimick_prompt, audio_input]}]
 res = model.chat(
     msgs=msgs,
     tokenizer=tokenizer,
@@ -2074,27 +2149,23 @@ res = model.chat(
     use_tts_template=True,
     temperature=0.3,
     generate_audio=True,
-    output_audio_path='output.wav', # save the tts result to output_audio_path
+    output_audio_path='output_mimick.wav', # save the tts result to output_audio_path
 )
 ```
 
-</details>
+<hr/>
 
 ##### General Speech Conversation with Configurable Voices
-<details> <summary>Click to view the Python code for enabling MiniCPM-o 2.6 to interact with you in a specified voice.</summary>
+
+A general usage scenario of `MiniCPM-o-2.6` is role-playing a specific character based on the audio prompt. It will mimic the voice of the character to some extent and act like the character in text, including language style. In this mode, `MiniCPM-o-2.6` sounds **more natural and human-like**. Self-defined audio prompts can be used to customize the voice of the character in an end-to-end manner.
+
 
 ```python
-ref_audio, _ = librosa.load('./assets/voice_01.wav', sr=16000, mono=True) # load the reference audio
-
-# Audio RolePlay:  # With this mode, model will role-play the character based on the audio prompt.
+ref_audio, _ = librosa.load('./assets/input_examples/icl_20.wav', sr=16000, mono=True) # load the reference audio
 sys_prompt = model.get_sys_prompt(ref_audio=ref_audio, mode='audio_roleplay', language='en')
-user_question = {'role': 'user', 'content': [librosa.load('xxx.wav', sr=16000, mono=True)[0]]}
 
-# Audio Assistant: # With this mode, model will speak with the voice in ref_audio as a AI assistant.
-# sys_prompt = model.get_sys_prompt(ref_audio=ref_audio, mode='audio_assistant', language='en') 
-# user_question = {'role': 'user', 'content': [librosa.load('xxx.wav', sr=16000, mono=True)[0]]} # Try to ask something!
-```
-```python
+# round one
+user_question = {'role': 'user', 'content': [librosa.load('xxx.wav', sr=16000, mono=True)[0]]}
 msgs = [sys_prompt, user_question]
 res = model.chat(
     msgs=msgs,
@@ -2104,7 +2175,7 @@ res = model.chat(
     use_tts_template=True,
     generate_audio=True,
     temperature=0.3,
-    output_audio_path='result.wav',
+    output_audio_path='result_roleplay_round_1.wav',
 )
 
 # round two
@@ -2119,32 +2190,64 @@ res = model.chat(
     use_tts_template=True,
     generate_audio=True,
     temperature=0.3,
-    output_audio_path='result_round_2.wav',
+    output_audio_path='result_roleplay_round_2.wav',
 )
 print(res)
 ```
 
-</details>
+<hr/>
 
-##### Addressing Various Audio Tasks
-<details>
-<summary> Click to show Python code running MiniCPM-o 2.6 with specific audioQA task. </summary>
+##### Speech Conversation as an AI Assistant
+
+An enhanced feature of `MiniCPM-o-2.6` is to act as an AI assistant, but only with limited choice of voices. In this mode, `MiniCPM-o-2.6` is **less human-like and more like a voice assistant**. In this mode, the model is more instruction-following. For demo, you are suggested to use `assistant_female_voice`, `assistant_male_voice`, and `assistant_default_female_voice`. Other voices may work but not as stable as the default voices.
+
+*Please note that, `assistant_female_voice` and `assistant_male_voice` are more stable but sounds like robots, while `assistant_default_female_voice` is more human-alike but not stable, its voice often changes in multiple turns. We suggest you to try stable voices `assistant_female_voice` and `assistant_male_voice`.*
 
 ```python
-'''
-Audio Understanding Task Prompt:
-Speech:
-    ASR with ZH(same as AST en2zh): 请仔细听这段音频片段，并将其内容逐字记录。
-    ASR with EN(same as AST zh2en): Please listen to the audio snippet carefully and transcribe the content.
-    Speaker Analysis: Based on the speaker's content, speculate on their gender, condition, age range, and health status.
-General Audio:
-    Audio Caption: Summarize the main content of the audio.
-    Sound Scene Tagging: Utilize one keyword to convey the audio's content or the associated scene.
-'''
-task_prompt = "\n"
-audio_input, _ = librosa.load('xxx.wav', sr=16000, mono=True)
+ref_audio, _ = librosa.load('./assets/input_examples/assistant_female_voice.wav', sr=16000, mono=True) # or use `./assets/input_examples/assistant_male_voice.wav`
+sys_prompt = model.get_sys_prompt(ref_audio=ref_audio, mode='audio_assistant', language='en') 
+user_question = {'role': 'user', 'content': [librosa.load('xxx.wav', sr=16000, mono=True)[0]]} # load the user's audio question
 
-msgs = [{'role': 'user', 'content': [task_prompt,audio_input]}]
+# round one
+msgs = [sys_prompt, user_question]
+res = model.chat(
+    msgs=msgs,
+    tokenizer=tokenizer,
+    sampling=True,
+    max_new_tokens=128,
+    use_tts_template=True,
+    generate_audio=True,
+    temperature=0.3,
+    output_audio_path='result_assistant_round_1.wav',
+)
+
+# round two
+history = msgs.append({'role': 'assistant', 'content': res})
+user_question = {'role': 'user', 'content': [librosa.load('xxx.wav', sr=16000, mono=True)[0]]}
+msgs = history.append(user_question)
+res = model.chat(
+    msgs=msgs,
+    tokenizer=tokenizer,
+    sampling=True,
+    max_new_tokens=128,
+    use_tts_template=True,
+    generate_audio=True,
+    temperature=0.3,
+    output_audio_path='result_assistant_round_2.wav',
+)
+print(res)
+```
+
+<hr/>
+
+##### Instruction-to-Speech
+
+`MiniCPM-o-2.6` can also do Instruction-to-Speech, aka **Voice Creation**. You can describe a voice in detail, and the model will generate a voice that matches the description. For more Instruction-to-Speech sample instructions, you can refer to https://voxinstruct.github.io/VoxInstruct/.
+
+```python
+instruction = 'Speak like a male charming superstar, radiating confidence and style in every word.'
+
+msgs = [{'role': 'user', 'content': [instruction]}]
 
 res = model.chat(
     msgs=msgs,
@@ -2154,29 +2257,22 @@ res = model.chat(
     use_tts_template=True,
     generate_audio=True,
     temperature=0.3,
-    output_audio_path='result.wav',
+    output_audio_path='result_voice_creation.wav',
 )
-print(res)
 ```
+
+<hr/>
+
+##### Voice Cloning
+
+`MiniCPM-o-2.6` can also do zero-shot text-to-speech, aka **Voice Cloning**. With this mode, model will act like a TTS model.
+
+
 ```python
-'''
-Speech Generation Task Prompt:
-    Human Instruction-to-Speech: see https://voxinstruct.github.io/VoxInstruct/
-    Example:
-        # 在新闻中，一个年轻男性兴致勃勃地说：“祝福亲爱的祖国母亲美丽富强！”他用低音调和低音量，慢慢地说出了这句话。
-        # Delighting in a surprised tone, an adult male with low pitch and low volume comments:"One even gave my little dog a biscuit" This dialogue takes place at a leisurely pace, delivering a sense of excitement and surprise in the context. 
-
-    Voice Cloning or Voice Creation: With this mode, model will act like a TTS model. 
-'''
-# Human Instruction-to-Speech:
-task_prompt = '' #Try to make some Human Instruction-to-Speech prompt
-msgs = [{'role': 'user', 'content': [task_prompt]}] # you can try to use the same audio question. (Voice Creation)
-
-# Voice Cloning mode: With this mode, model will act like a TTS model. 
-# sys_prompt = model.get_sys_prompt(ref_audio=ref_audio, mode='voice_cloning', language='en')
-# text_prompt = f"Please read the text below."
-# user_question = {'role': 'user', 'content': [text_prompt, "content that you want to read"]} # using same voice in sys_prompt to read the text. (Voice Cloning)
-# user_question = {'role': 'user', 'content': [text_prompt, librosa.load('xxx.wav', sr=16000, mono=True)[0]]} # using same voice in sys_prompt to read 'xxx.wav'. (Voice Conversion)
+ref_audio, _ = librosa.load('./assets/input_examples/icl_20.wav', sr=16000, mono=True) # load the reference audio
+sys_prompt = model.get_sys_prompt(ref_audio=ref_audio, mode='voice_cloning', language='en')
+text_prompt = f"Please read the text below."
+user_question = {'role': 'user', 'content': [text_prompt, "content that you want to read"]}
 
 msgs = [sys_prompt, user_question]
 res = model.chat(
@@ -2187,13 +2283,46 @@ res = model.chat(
     use_tts_template=True,
     generate_audio=True,
     temperature=0.3,
-    output_audio_path='result.wav',
+    output_audio_path='result_voice_cloning.wav',
 )
-
 
 ```
 
-</details>
+<hr/>
+
+##### Addressing Various Audio Understanding Tasks
+
+`MiniCPM-o-2.6` can also be used to address various audio understanding tasks, such as ASR, speaker analysis, general audio captioning, and sound scene tagging.
+
+For audio-to-text tasks, you can use the following prompts:
+
+- ASR with ZH(same as AST en2zh): `请仔细听这段音频片段，并将其内容逐字记录。`
+- ASR with EN(same as AST zh2en): `Please listen to the audio snippet carefully and transcribe the content.`
+- Speaker Analysis: `Based on the speaker's content, speculate on their gender, condition, age range, and health status.`
+- General Audio Caption: `Summarize the main content of the audio.`
+- General Sound Scene Tagging: `Utilize one keyword to convey the audio's content or the associated scene.`
+
+```python
+task_prompt = "Please listen to the audio snippet carefully and transcribe the content." + "\n" # can change to other prompts.
+audio_input, _ = librosa.load('./assets/input_examples/audio_understanding.mp3', sr=16000, mono=True) # load the audio to be captioned
+
+msgs = [{'role': 'user', 'content': [task_prompt, audio_input]}]
+
+res = model.chat(
+    msgs=msgs,
+    tokenizer=tokenizer,
+    sampling=True,
+    max_new_tokens=128,
+    use_tts_template=True,
+    generate_audio=True,
+    temperature=0.3,
+    output_audio_path='result_audio_understanding.wav',
+)
+print(res)
+```
+
+
+
 
 #### Multimodal Live Streaming
 <details>
@@ -2207,8 +2336,8 @@ from moviepy.editor import VideoFileClip
 import tempfile
 import librosa
 import soundfile as sf
-
-## make sure The model has been initialized and `model.init_tts()` has been executed
+import torch
+from transformers import AutoModel, AutoTokenizer
 
 def get_video_chunk_content(video_path, flatten=True):
     video = VideoFileClip(video_path)
@@ -2233,7 +2362,19 @@ def get_video_chunk_content(video_path, flatten=True):
     
     return contents
 
-video_path="/path/to/video"
+
+model = AutoModel.from_pretrained('openbmb/MiniCPM-o-2_6', trust_remote_code=True,
+    attn_implementation='sdpa', torch_dtype=torch.bfloat16)
+model = model.eval().cuda()
+tokenizer = AutoTokenizer.from_pretrained('openbmb/MiniCPM-o-2_6', trust_remote_code=True)
+
+model.init_tts()
+
+# If you are using an older version of PyTorch, you might encounter this issue "weight_norm_fwd_first_dim_kernel" not implemented for 'BFloat16', Please convert the TTS to float32 type.
+# model.tts.float()
+
+# https://huggingface.co/openbmb/MiniCPM-o-2_6/blob/main/assets/Skiing.mp4
+video_path="assets/Skiing.mp4"
 sys_msg = model.get_sys_prompt(mode='omni', language='en')
 # if use voice clone prompt, please set ref_audio
 # ref_audio_path = '/path/to/ref_audio'
@@ -2365,8 +2506,6 @@ PYTORCH_ENABLE_MPS_FALLBACK=1 python test.py
 ```
 </details>
 
-### Deployment on Mobile Phone
-MiniCPM-V 2.0 can be deployed on mobile phones with Android operating systems. 🚀 Click [MiniCPM-V 2.0](https://github.com/OpenBMB/mlc-MiniCPM) to install apk.
 
 ### Efficient Inference with llama.cpp, ollama, vLLM
 
@@ -2378,103 +2517,15 @@ See [our fork of ollama](https://github.com/OpenBMB/ollama/blob/minicpm-v2.6/exa
 <details>
 <summary> vLLM now officially supports MiniCPM-V 2.6, MiniCPM-Llama3-V 2.5 and MiniCPM-V 2.0. And you can use our fork to run MiniCPM-o 2.6 for now. Click to see. </summary>
 
-1. For MiniCPM-o 2.6
-   1. Clone our fork of vLLM:
-   ```shell
-   git clone https://github.com/OpenBMB/vllm.git
-   cd vllm
-   git checkout minicpmo
-   ```
-   2. Install vLLM from source:
-   ```shell
-   VLLM_USE_PRECOMPILED=1 pip install --editable . 
-   ```
-   3. Run MiniCPM-o 2.6 in the same way as the previous models (shown in the following example).
+1. Install vLLM(>=0.7.1):
+```shell
+pip install vllm
+```
 
-2. For previous MiniCPM-V models
-    1. Install vLLM(>=0.5.4):
-    ```shell
-    pip install vllm
-    ```
-    2. Install timm: (optional, MiniCPM-V 2.0 need timm)
-    ```shell
-    pip install timm==0.9.10
-    ```
-    3. Run the example(for image):
-    ```python
-    from transformers import AutoTokenizer
-    from PIL import Image
-    from vllm import LLM, SamplingParams
-
-    MODEL_NAME = "openbmb/MiniCPM-V-2_6"
-    # MODEL_NAME = "openbmb/MiniCPM-O-2_6"
-    # Also available for previous models
-    # MODEL_NAME = "openbmb/MiniCPM-Llama3-V-2_5"
-    # MODEL_NAME = "HwwwH/MiniCPM-V-2"
-
-    image = Image.open("xxx.png").convert("RGB")
-    tokenizer = AutoTokenizer.from_pretrained(MODEL_NAME, trust_remote_code=True)
-    llm = LLM(
-        model=MODEL_NAME,
-        trust_remote_code=True,
-        gpu_memory_utilization=1,
-        max_model_len=2048
-    )
-
-    messages = [{
-        "role":
-        "user",
-        "content":
-        # Number of images
-        "(<image>./</image>)" + \
-        "\nWhat is the content of this image?" 
-    }]
-    prompt = tokenizer.apply_chat_template(
-        messages,
-        tokenize=False,
-        add_generation_prompt=True
-    )
-
-    # Single Inference
-    inputs = {
-        "prompt": prompt,
-        "multi_modal_data": {
-            "image": image
-            # Multi images, the number of images should be equal to that of `(<image>./</image>)`
-            # "image": [image, image] 
-        },
-    }
-    # Batch Inference
-    # inputs = [{
-    #     "prompt": prompt,
-    #     "multi_modal_data": {
-    #         "image": image
-    #     },
-    # } for _ in 2]
-
-
-    # 2.6
-    stop_tokens = ['<|im_end|>', '<|endoftext|>']
-    stop_token_ids = [tokenizer.convert_tokens_to_ids(i) for i in stop_tokens]
-    # 2.0
-    # stop_token_ids = [tokenizer.eos_id]
-    # 2.5
-    # stop_token_ids = [tokenizer.eos_id, tokenizer.eot_id]
-
-    sampling_params = SamplingParams(
-        stop_token_ids=stop_token_ids, 
-        use_beam_search=True,
-        temperature=0, 
-        best_of=3,
-        max_tokens=1024
-    )
-
-    outputs = llm.generate(inputs, sampling_params=sampling_params)
-
-    print(outputs[0].outputs[0].text)
-    ```
-    4. click [here](https://modelbest.feishu.cn/wiki/C2BWw4ZP0iCDy7kkCPCcX2BHnOf?from=from_copylink) if you want to use it with *video*, or get more details about `vLLM`.
-    </details>
+2. Run Example:
+* [Vision Language](https://docs.vllm.ai/en/latest/getting_started/examples/vision_language.html) 
+* [Audio Language](https://docs.vllm.ai/en/latest/getting_started/examples/audio_language.html) 
+  </details>
 
 ## Fine-tuning
 
@@ -2484,11 +2535,19 @@ We support simple fine-tuning with Hugging Face for MiniCPM-o 2.6, MiniCPM-V 2.6
 
 [Reference Document](./finetune/readme.md)
 
+
+### With Align-Anything <!-- omit in toc -->
+
+We support fine-tuning MiniCPM-o 2.6 by PKU-Alignment Team (both vision and audio, SFT and DPO) with the [Align-Anything framework](https://github.com/PKU-Alignment/align-anything). Align-Anything is a scalable framework that aims to align any-modality large models with human intentions, open-sourcing the [datasets, models and benchmarks](https://huggingface.co/datasets/PKU-Alignment/align-anything). Benefiting from its concise and modular design, it supports 30+ open-source benchmarks, 40+ models and algorithms including SFT, SimPO, RLHF, *etc*. It also provides 30+ directly runnable scripts, making it suitable for beginners to quickly get started.
+
+Best Practices: [MiniCPM-o 2.6](https://github.com/PKU-Alignment/align-anything/tree/main/scripts).
+
+
 ### With LLaMA-Factory <!-- omit in toc -->
 
-We support fine-tuning MiniCPM-o-2.6 and MiniCPM-V 2.6 with the LLaMA-Factory framework. LLaMA-Factory provides a solution for flexibly customizing the fine-tuning (Lora/Full/Qlora) of 200+ LLMs without the need for coding through the built-in web UI LLaMABoard. It supports various training methods like sft/ppo/dpo/kto and advanced algorithms like Galore/BAdam/LLaMA-Pro/Pissa/LongLoRA.
+We support fine-tuning MiniCPM-o 2.6 and MiniCPM-V 2.6 with the LLaMA-Factory framework. LLaMA-Factory provides a solution for flexibly customizing the fine-tuning (Lora/Full/Qlora) of 200+ LLMs without the need for coding through the built-in web UI LLaMABoard. It supports various training methods like sft/ppo/dpo/kto and advanced algorithms like Galore/BAdam/LLaMA-Pro/Pissa/LongLoRA.
 
-Best Practices: [MiniCPM-V-2.6 | MiniCPM-o-2.6](./docs/llamafactory_train.md). 
+Best Practices: [MiniCPM-o 2.6 | MiniCPM-V 2.6](./docs/llamafactory_train_and_infer.md). 
 
 
 ### With the SWIFT Framework <!-- omit in toc -->
@@ -2502,8 +2561,8 @@ Click here to view the [FAQs](./docs/faqs.md)
 
 ## Limitations
 As an experimental trial, we find MiniCPM-o 2.6 has notable limitations worth further investigation and improvement.
-- **Unstable speech output.** The speech generation can be flawed with noisy background and unmeaningful sound.
-- **Repeated response.** The model tends to repeat its response when encounting similar consecutive user queries.
+- **Unstable speech output.** The speech generation can be flawed with noisy backgrounds and unmeaningful sounds.
+- **Repeated response.** The model tends to repeat its response when encountering similar consecutive user queries.
 - **High-latency on Web Demo.** Users may experience unusual high-latency when using web demo hosted on overseas servers. We recommend deploying the demo locally or with good network connections.
 
 ## Model License <!-- omit in toc -->
@@ -2516,9 +2575,9 @@ As an experimental trial, we find MiniCPM-o 2.6 has notable limitations worth fu
 
 ## Statement <!-- omit in toc -->
 
-As MLLMs, MiniCPM-o/V models generate contents by learning a large amount of multimodal corpora, but they cannot comprehend, express personal opinions or make value judgement. Anything generated by MiniCPM-o/V models does not represent the views and positions of the model developers
+As MLLMs, MiniCPM-o/V models generate content by learning a large number of multimodal corpora, but they cannot comprehend, express personal opinions, or make value judgements. Anything generated by MiniCPM-o/V models does not represent the views and positions of the model developers
 
-We will not be liable for any problems arising from the use of MiniCPM-o/V models, including but not limited to data security issues, risk of public opinion, or any risks and problems arising from the misdirection, misuse, dissemination or misuse of the model.
+We will not be liable for any problems arising from the use of MiniCPM-o/V models, including but not limited to data security issues, risk of public opinion, or any risks and problems arising from the misdirection, misuse, dissemination, or misuse of the model.
 
 
 ## Institutions  <!-- omit in toc -->
@@ -2531,13 +2590,13 @@ This project is developed by the following institutions:
 ## 🌟 Star History <!-- omit in toc -->
 
 
-<table align="center">
+<!-- <table align="center">
     <p align="center">
       <img src="assets/star_history.svg"/>
     </p>
-</table>
+</table> -->
 
-<!-- <picture>
+<picture>
   <source
     media="(prefers-color-scheme: dark)"
     srcset="
@@ -2554,7 +2613,7 @@ This project is developed by the following institutions:
     alt="Star History Chart"
     src="https://api.star-history.com/svg?repos=OpenBMB/MiniCPM-o&type=Date"
   />
-</picture> -->
+</picture>
 
 ## Key Techniques and Other Multimodal Projects <!-- omit in toc -->
 

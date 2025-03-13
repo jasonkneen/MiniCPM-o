@@ -19,7 +19,7 @@
   
   <p align="center">
   MiniCPM-o 2.6 <a href="https://huggingface.co/openbmb/MiniCPM-o-2_6">🤗</a> <a href="https://minicpm-omni-webdemo-us.modelbest.cn/"> 🤖</a> | MiniCPM-V 2.6 <a href="https://huggingface.co/openbmb/MiniCPM-V-2_6">🤗</a> <a href="http://120.92.209.146:8887/">🤖</a> | 
-  技术报告近期将发布
+  📄 技术报告 [<a href="https://openbmb.notion.site/MiniCPM-o-2-6-GPT-4o-188ede1b7a558084b3aedd669cb80730">中文</a>/<a href="https://openbmb.notion.site/MiniCPM-o-2-6-A-GPT-4o-Level-MLLM-for-Vision-Speech-and-Multimodal-Live-Streaming-on-Your-Phone-185ede1b7a558042b5d5e45e6b237da9">English</a>]
 </p>
 
 </div>
@@ -37,11 +37,26 @@
 
 #### 📌 置顶
 
+* [2025.03.01] 🚀🚀🚀 MiniCPM-o 系列的对齐技术 RLAIF-V 被 CVPR 2025 接收了！其[代码](https://github.com/RLHF-V/RLAIF-V)、[数据](https://huggingface.co/datasets/openbmb/RLAIF-V-Dataset)、[论文](https://arxiv.org/abs/2405.17220)均已开源。
+
+* [2025.01.24] 📢📢📢 MiniCPM-o 2.6 技术报告已发布! 欢迎点击[这里](https://openbmb.notion.site/MiniCPM-o-2-6-A-GPT-4o-Level-MLLM-for-Vision-Speech-and-Multimodal-Live-Streaming-on-Your-Phone-185ede1b7a558042b5d5e45e6b237da9)查看.
+
+* [2025.01.23] 💡💡💡 MiniCPM-o 2.6 现在已被北大团队开发的 [Align-Anything](https://github.com/PKU-Alignment/align-anything)，一个用于对齐全模态大模型的框架集成，支持 DPO 和 SFT 在视觉和音频模态上的微调。欢迎试用！
+
+* [2025.01.19] 📢 **注意!** 我们正在努力将 MiniCPM-o 2.6 的支持合并到 llama.cpp、ollama、vLLM 的官方仓库，但还未完成。请大家暂时先使用我们提供的 fork 来进行部署：[llama.cpp](https://github.com/OpenBMB/llama.cpp/blob/minicpm-omni/examples/llava/README-minicpmo2.6.md)、[ollama](https://github.com/OpenBMB/ollama/blob/minicpm-v2.6/examples/minicpm-v2.6/README.md)、[vllm](https://github.com/OpenBMB/MiniCPM-o?tab=readme-ov-file#efficient-inference-with-llamacpp-ollama-vllm)。 **合并完成前，使用官方仓库可能会导致不可预期的问题**。
+
+* [2025.01.19] ⭐️⭐️⭐️ MiniCPM-o 在 GitHub Trending 上登顶， Hugging Face Trending 上也达到了第二！
+
+* [2025.01.17] 我们更新了 MiniCPM-o 2.6 int4 量化版本的使用方式，解决了模型初始化的问题，欢迎点击[这里](https://huggingface.co/openbmb/MiniCPM-o-2_6-int4)试用！
 
 * [2025.01.13] 🔥🔥🔥 我们开源了 MiniCPM-o 2.6，该模型视觉、语音和多模态流式能力达到了 GPT-4o-202405 级别，进一步优化了 MiniCPM-V 2.6 的众多亮点能力，还支持了很多有趣的新功能。欢迎试用！
+
 * [2024.08.17] 🚀🚀🚀 llama.cpp [官方仓库](https://github.com/ggerganov/llama.cpp)正式支持 MiniCPM-V 2.6 啦！点击[这里](https://huggingface.co/openbmb/MiniCPM-V-2_6-gguf)查看各种大小的 GGUF 版本。
+
 * [2024.08.06] 🔥🔥🔥 我们开源了 MiniCPM-V 2.6，该模型在单图、多图和视频理解方面取得了优于 GPT-4V 的表现。我们还进一步提升了 MiniCPM-Llama3-V 2.5 的多项亮点能力，并首次支持了 iPad 上的实时视频理解。欢迎试用！
+
 * [2024.08.03] MiniCPM-Llama3-V 2.5 技术报告已发布！欢迎点击[这里](https://arxiv.org/abs/2408.01800)查看。
+
 * [2024.05.23] 🔥🔥🔥 MiniCPM-V 在 GitHub Trending 和 Hugging Face Trending 上登顶！MiniCPM-Llama3-V 2.5 Demo 被 Hugging Face 的 Gradio 官方账户推荐，欢迎点击[这里](https://huggingface.co/spaces/openbmb/MiniCPM-Llama3-V-2_5)体验！
 
 
@@ -76,8 +91,7 @@
 
 - [MiniCPM-o 2.6](#minicpm-o-26)
 - [MiniCPM-V 2.6](#minicpm-v-26)
-- [Gradio Demo 🤗](#gradio-demo-)
-- [安装](#安装)
+- [Chat with Our Demo on Gradio 🤗](#chat-with-our-demo-on-gradio-)
 - [推理](#推理)
   - [模型库](#模型库)
   - [多轮对话](#多轮对话)
@@ -91,8 +105,6 @@
     - [多模态流式交互](#多模态流式交互)
   - [多卡推理](#多卡推理)
   - [Mac 推理](#mac-推理)
-  - [手机端部署](#手机端部署)
-  - [本地WebUI Demo部署](#本地webui-demo部署)
   - [基于 llama.cpp、ollama、vLLM 的高效推理](#基于-llamacppollamavllm-的高效推理)
 - [微调](#微调)
 - [FAQs](#faqs)
@@ -121,8 +133,7 @@ MiniCPM-o 2.6 进一步优化了 MiniCPM-V 2.6 的众多视觉理解能力，其
 
 
 - 💫 **易于使用。**
-MiniCPM-o 2.6 可以通过多种方式轻松使用：(1) [llama.cpp](https://github.com/OpenBMB/llama.cpp/blob/minicpm-omni/examples/llava/README-minicpmo2.6.md) 支持在本地设备上进行高效的 CPU 推理，(2) [int4](https://huggingface.co/openbmb/MiniCPM-V-2_6-int4) 和 [GGUF](https://huggingface.co/openbmb/MiniCPM-V-2_6-gguf) 格式的量化模型，有 16 种尺寸，(3) [vLLM](#基于-llamacppollamavllm-的高效推理) 支持高吞吐量和内存高效的推理，(4) 通过[LLaMA-Factory](./docs/llamafactory_train.md)框架针对新领域和任务进行微调，(5) 使用 [Gradio](#本地-webui-demo-) 快速设置本地 WebUI 演示，(6) 部署于服务器的在线 [demo](https://minicpm-omni-webdemo-us.modelbest.cn/)。
-
+MiniCPM-o 2.6 可以通过多种方式轻松使用：(1) [llama.cpp](https://github.com/OpenBMB/llama.cpp/blob/minicpm-omni/examples/llava/README-minicpmo2.6.md) 支持在本地设备上进行高效的 CPU 推理，(2) [int4](https://huggingface.co/openbmb/MiniCPM-V-2_6-int4) 和 [GGUF](https://huggingface.co/openbmb/MiniCPM-V-2_6-gguf) 格式的量化模型，有 16 种尺寸，(3) [vLLM](#基于-llamacppollamavllm-的高效推理) 支持高吞吐量和内存高效的推理，(4) 通过[LLaMA-Factory](./docs/llamafactory_train_and_infer.md)框架针对新领域和任务进行微调，(5) 使用 [Gradio](#本地-webui-demo-) 快速设置本地 WebUI 演示，(6) 部署于服务器的在线 [demo](https://minicpm-omni-webdemo-us.modelbest.cn/)。
 
 **模型架构。**
 
@@ -770,6 +781,19 @@ MiniCPM-o 2.6 可以通过多种方式轻松使用：(1) [llama.cpp](https://git
             <td>24.3</td>
         </tr>
         <tr>
+            <td nowrap="nowrap" align="left">VITA-1.5</td>
+            <td>8B</td>
+            <td>46.7</td>
+            <td>28.1</td>
+            <td>23.3</td>
+            <td>2.0</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+        </tr>
+        <tr>
             <td nowrap="nowrap" align="left">Moshi</td>
             <td>7B</td>
             <td>43.7</td>
@@ -999,9 +1023,11 @@ MiniCPM-o 2.6 可以通过多种方式轻松使用：(1) [llama.cpp](https://git
 
 
 <div align="center">
-  <a href="https://youtu.be/JFJg9KZ_iZk"><img src="./assets/o-2dot6-demo-video-preview.png", width=70%></a>
+  <a href="https://www.youtube.com/watch?v=vRIMbxJzStY&t=2s"><img src="./assets/minicpmo2_6/2dot6_o_demo_video_img.png", width=70%></a>
 </div>
 <br>
+
+
 
 <div style="display: flex; flex-direction: column; align-items: center;">
   <img src="assets/minicpmo2_6/minicpmo2_6_math_intersect.png" alt="math" style="margin-bottom: 5px;">
@@ -1787,7 +1813,7 @@ MiniCPM-o 2.6 可以通过多种方式轻松使用：(1) [llama.cpp](https://git
 | OmniLMM-12B  | [文档](./omnilmm.md)   |  
 
 
-## Gradio Demo 🤗
+## Chat with Our Demo on Gradio 🤗
 
 我们提供由 Hugging Face Gradio <a href='https://github.com/gradio-app/gradio'><img src='https://img.shields.io/github/stars/gradio-app/gradio'></a> 支持的在线和本地 Demo。Gradio 是目前最流行的模型部署框架，支持流式输出、进度条、process bars 和其他常用功能。
 
@@ -1797,47 +1823,43 @@ MiniCPM-o 2.6 可以通过多种方式轻松使用：(1) [llama.cpp](https://git
 
 ### 本地 WebUI Demo <!-- omit in toc --> 
 
-您可以使用以下命令轻松构建自己的本地 WebUI Demo, 体验实时流式视频/语音通话。
+您可以使用以下命令轻松构建自己的本地 WebUI Demo。更详细的部署教程请参考[文档](https://modelbest.feishu.cn/wiki/RnjjwnUT7idMSdklQcacd2ktnyN)。
 
+**实时流式视频/语音通话demo:**
 1. 启动model server:
 ```shell
 pip install -r requirements_o2.6.txt
 
 python web_demos/minicpm-o_2.6/model_server.py
 ```
+请确保 `transformers==4.44.2`，其他版本目前可能会有兼容性问题，我们正在解决。
+如果你使用的低版本的 Pytorch，你可能会遇到这个错误`"weight_norm_fwd_first_dim_kernel" not implemented for 'BFloat16'`, 请在模型初始化的时候添加 `self.minicpmo_model.tts.float()`
 
 2. 启动web server:
 ```shell
 # Make sure Node and PNPM is installed.
-cd web_demos/minicpm-o_2.6/web_server
-pnpm install  # install requirements
+sudo apt-get update
+sudo apt-get install nodejs npm
+npm install -g pnpm
 
+
+cd web_demos/minicpm-o_2.6/web_server
+# 为https创建自签名证书, 要申请浏览器摄像头和麦克风权限须启动https.
+bash ./make_ssl_cert.sh  # output key.pem and cert.pem
+
+pnpm install  # install requirements
 pnpm run dev  # start server
 ```
+浏览器打开`https://localhost:8088/`，开始体验实时流式视频/语音通话.
 
-
-
-## 安装
-
-1. 克隆我们的仓库并跳转到相应目录
-
-```bash
-git clone https://github.com/OpenBMB/MiniCPM-o.git
-cd MiniCPM-o
-```
-
-1. 创建 conda 环境
-
-```Shell
-conda create -n MiniCPMo python=3.10 -y
-conda activate MiniCPMo
-```
-
-3. 安装依赖
-
+**Chatbot图文对话demo:**
 ```shell
 pip install -r requirements_o2.6.txt
+
+python web_demos/minicpm-o_2.6/chatbot_web_demo_o2.6.py
 ```
+浏览器打开`http://localhost:8000/`，开始体验图文对话Chatbot.
+
 
 ## 推理
 
@@ -1856,7 +1878,11 @@ pip install -r requirements_o2.6.txt
 
 
 ### 多轮对话
+请确保 `transformers==4.44.2`，其他版本目前可能会有兼容性问题
 
+```shell
+pip install -r requirements_o2.6.txt
+```
 
 <div align="center">
 <img src="assets/minicpmo2_6/show_demo.jpg" width="500px">
@@ -2193,8 +2219,8 @@ from moviepy.editor import VideoFileClip
 import tempfile
 import librosa
 import soundfile as sf
-
-## make sure The model has been initialized and `model.init_tts()` has been executed
+import torch
+from transformers import AutoModel, AutoTokenizer
 
 def get_video_chunk_content(video_path, flatten=True):
     video = VideoFileClip(video_path)
@@ -2219,7 +2245,19 @@ def get_video_chunk_content(video_path, flatten=True):
     
     return contents
 
-video_path="/path/to/video"
+
+model = AutoModel.from_pretrained('openbmb/MiniCPM-o-2_6', trust_remote_code=True,
+    attn_implementation='sdpa', torch_dtype=torch.bfloat16)
+model = model.eval().cuda()
+tokenizer = AutoTokenizer.from_pretrained('openbmb/MiniCPM-o-2_6', trust_remote_code=True)
+
+model.init_tts()
+
+# If you are using an older version of PyTorch, you might encounter this issue "weight_norm_fwd_first_dim_kernel" not implemented for 'BFloat16', Please convert the TTS to float32 type.
+# model.tts.float()
+
+# https://huggingface.co/openbmb/MiniCPM-o-2_6/blob/main/assets/Skiing.mp4
+video_path="assets/Skiing.mp4"
 sys_msg = model.get_sys_prompt(mode='omni', language='en')
 # if use voice clone prompt, please set ref_audio
 # ref_audio_path = '/path/to/ref_audio'
@@ -2353,31 +2391,6 @@ PYTORCH_ENABLE_MPS_FALLBACK=1 python test.py
 </details>
 
 
-### 手机端部署
-MiniCPM-V 2.0 可运行在Android手机上，点击[MiniCPM-V 2.0](https://github.com/OpenBMB/mlc-MiniCPM)安装apk使用; 
-
-### 本地WebUI Demo部署
-<details>
-<summary>点击查看本地WebUI demo部署方法, 体验实时流式视频/语音通话 </summary>
-
-1. 启动model server:
-```shell
-pip install -r requirements_o2.6.txt
-
-python web_demos/minicpm-o_2.6/model_server.py
-```
-
-2. 启动web server:
-```shell
-# Make sure Node and PNPM is installed.
-cd web_demos/minicpm-o_2.6/web_server
-pnpm install  # install requirements
-
-pnpm run dev  # start server
-```
-  
-</details>
-
 ### 基于 llama.cpp、ollama、vLLM 的高效推理
 
 llama.cpp 用法请参考[我们的fork llama.cpp](https://github.com/OpenBMB/llama.cpp/tree/minicpmv-main/examples/llava/README-minicpmv2.6.md)， 在iPad上可以支持 16~18 token/s 的流畅推理（测试环境：iPad Pro + M4）。
@@ -2385,103 +2398,17 @@ llama.cpp 用法请参考[我们的fork llama.cpp](https://github.com/OpenBMB/ll
 ollama 用法请参考[我们的fork ollama](https://github.com/OpenBMB/ollama/blob/minicpm-v2.6/examples/minicpm-v2.6/README.md)， 在iPad上可以支持 16~18 token/s 的流畅推理（测试环境：iPad Pro + M4）。
 
 <details>
-<summary>点击查看, vLLM 现已官方支持MiniCPM-V 2.6、MiniCPM-Llama3-V 2.5 和 MiniCPM-V 2.0，MiniCPM-o 2.6 模型也可以临时用我们的 fork 仓库运行。  </summary>
-1. MiniCPM-o 2.6
-   1. 克隆我们的 vLLM fork 仓库:
-   ```shell
-   git clone https://github.com/OpenBMB/vllm.git
-   cd vllm
-   git checkout minicpmo
-   ```
-   2. 从源码进行安装:
-   ```shell
-   VLLM_USE_PRECOMPILED=1 pip install --editable . 
-   ```
-   3. 用和之前同样的方式运行（下有样例）.
-
-2. 之前版本的 MiniCPM-V
-    1. 安装 vLLM(>=0.5.4):
-    ```shell
-    pip install vllm
-    ```
-    3. 安装 timm 库: （可选，MiniCPM-V 2.0需安装）
-    ```shell
-    pip install timm=0.9.10
-    ```
-    4. 运行示例代码:（注意：如果使用本地路径的模型，请确保模型代码已更新到Hugging Face上的最新版)
-    ```python
-    from transformers import AutoTokenizer
-    from PIL import Image
-    from vllm import LLM, SamplingParams
-
-    MODEL_NAME = "openbmb/MiniCPM-V-2_6"
-    # MODEL_NAME = "openbmb/MiniCPM-O-2_6"
-    # Also available for previous models
-    # MODEL_NAME = "openbmb/MiniCPM-Llama3-V-2_5"
-    # MODEL_NAME = "HwwwH/MiniCPM-V-2"
-
-    image = Image.open("xxx.png").convert("RGB")
-    tokenizer = AutoTokenizer.from_pretrained(MODEL_NAME, trust_remote_code=True)
-    llm = LLM(
-        model=MODEL_NAME,
-        trust_remote_code=True,
-        gpu_memory_utilization=1,
-        max_model_len=2048
-    )
-
-    messages = [{
-        "role":
-        "user",
-        "content":
-        # Number of images
-        "(<image>./</image>)" + \
-        "\nWhat is the content of this image?" 
-    }]
-    prompt = tokenizer.apply_chat_template(
-        messages,
-        tokenize=False,
-        add_generation_prompt=True
-    )
-
-    # Single Inference
-    inputs = {
-        "prompt": prompt,
-        "multi_modal_data": {
-            "image": image
-            # Multi images, the number of images should be equal to that of `(<image>./</image>)`
-            # "image": [image, image] 
-        },
-    }
-    # Batch Inference
-    # inputs = [{
-    #     "prompt": prompt,
-    #     "multi_modal_data": {
-    #         "image": image
-    #     },
-    # } for _ in 2]
-
-
-    # 2.6
-    stop_tokens = ['<|im_end|>', '<|endoftext|>']
-    stop_token_ids = [tokenizer.convert_tokens_to_ids(i) for i in stop_tokens]
-    # 2.0
-    # stop_token_ids = [tokenizer.eos_id]
-    # 2.5
-    # stop_token_ids = [tokenizer.eos_id, tokenizer.eot_id]
-
-    sampling_params = SamplingParams(
-        stop_token_ids=stop_token_ids, 
-        use_beam_search=True,
-        temperature=0, 
-        best_of=3,
-        max_tokens=1024
-    )
-
-    outputs = llm.generate(inputs, sampling_params=sampling_params)
-
-    print(outputs[0].outputs[0].text)
-    ```
-    4. [点击此处](https://modelbest.feishu.cn/wiki/C2BWw4ZP0iCDy7kkCPCcX2BHnOf?from=from_copylink)查看带视频推理和其他有关 `vLLM` 的信息。
+<summary>点击查看, vLLM 现已官方支持MiniCPM-o 2.6、MiniCPM-V 2.6、MiniCPM-Llama3-V 2.5 和 MiniCPM-V 2.0。  </summary>
+1. 安装 vLLM(>=0.7.1):
+  
+```shell
+pip install vllm
+```
+  
+2. 运行示例代码:（注意：如果使用本地路径的模型，请确保模型代码已更新到Hugging Face上的最新版)
+  
+  * [图文示例](https://docs.vllm.ai/en/latest/getting_started/examples/vision_language.html) 
+  * [音频示例](https://docs.vllm.ai/en/latest/getting_started/examples/audio_language.html) 
 
 </details>
 
@@ -2494,11 +2421,19 @@ ollama 用法请参考[我们的fork ollama](https://github.com/OpenBMB/ollama/b
 
 [参考文档](./finetune/readme.md)
 
+
+### 使用 Align-Anything <!-- omit in toc -->
+
+我们支持使用北大团队开发的 [Align-Anything](https://github.com/PKU-Alignment/align-anything) 框架微调 MiniCPM-o 系列模型，同时支持 DPO 和 SFT 在视觉和音频模态上的微调。Align-Anything 是一个用于对齐全模态大模型的高度可扩展框架，开源了[数据集、模型和评测](https://huggingface.co/datasets/PKU-Alignment/align-anything)。它支持了 30+ 开源基准，40+ 模型，以及包含SFT、SimPO、RLHF在内的多种算法，并提供了 30+ 直接可运行的脚本，适合初学者快速上手。
+
+最佳实践: [MiniCPM-o 2.6](https://github.com/PKU-Alignment/align-anything/tree/main/scripts).
+
+
 ### 使用 LLaMA-Factory <!-- omit in toc -->
 
-我们支持使用 LLaMA-Factory 微调 MiniCPM-o-2.6 和 MiniCPM-V 2.6。LLaMA-Factory 提供了一种灵活定制 200 多个大型语言模型（LLM）微调（Lora/Full/Qlora）解决方案，无需编写代码，通过内置的 Web 用户界面 LLaMABoard 即可实现训练/推理/评估。它支持多种训练方法，如 sft/ppo/dpo/kto，并且还支持如 Galore/BAdam/LLaMA-Pro/Pissa/LongLoRA 等高级算法。
+我们支持使用 LLaMA-Factory 微调 MiniCPM-o 2.6 和 MiniCPM-V 2.6。LLaMA-Factory 提供了一种灵活定制 200 多个大型语言模型（LLM）微调（Lora/Full/Qlora）解决方案，无需编写代码，通过内置的 Web 用户界面 LLaMABoard 即可实现训练/推理/评估。它支持多种训练方法，如 sft/ppo/dpo/kto，并且还支持如 Galore/BAdam/LLaMA-Pro/Pissa/LongLoRA 等高级算法。
 
-最佳实践: [MiniCPM-V-2.6 | MiniCPM-o-2.6](https://github.com/openbmb/MiniCPM-V/blob/main/docs/llamafactory_train.md). 
+最佳实践: [MiniCPM-o 2.6 | MiniCPM-V 2.6](./docs/llamafactory_train_and_infer.md). 
 
 
 ### 使用 SWIFT 框架 <!-- omit in toc -->
@@ -2542,13 +2477,13 @@ ollama 用法请参考[我们的fork ollama](https://github.com/OpenBMB/ollama/b
 ## 🌟 Star History <!-- omit in toc -->
 
 
-<table align="center">
+<!-- <table align="center">
     <p align="center">
       <img src="assets/star_history.svg"/>
     </p>
-</table>
+</table> -->
 
-<!-- <picture>
+<picture>
   <source
     media="(prefers-color-scheme: dark)"
     srcset="
@@ -2565,7 +2500,7 @@ ollama 用法请参考[我们的fork ollama](https://github.com/OpenBMB/ollama/b
     alt="Star History Chart"
     src="https://api.star-history.com/svg?repos=OpenBMB/MiniCPM-o&type=Date"
   />
-</picture> -->
+</picture>
 
 ## 支持技术和其他多模态项目 <!-- omit in toc -->
 
