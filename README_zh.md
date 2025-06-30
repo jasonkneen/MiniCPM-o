@@ -13,7 +13,11 @@
    <a href="docs/wechat.md" target="_blank"> 微信社区</a> &nbsp;|
  </span>
   <span style="display: inline-flex; align-items: center; margin-left: 2px;">
-   MiniCPM-V <a href="docs/best_practice_summary_zh.md" target="_blank">&nbsp; 📖 最佳实践</a>
+   MiniCPM-V <a href="docs/best_practice_summary_zh.md" target="_blank">&nbsp; 📖 最佳实践</a >&nbsp;|
+ </span>
+ <span style="display: inline-flex; align-items: center; margin-center: 2px; vertical-align:top">
+ <img src="./assets/join.png" alt="Join us" style="margin-left: 2px;">
+   <a href="https://mp.weixin.qq.com/mp/wappoc_appmsgcaptcha?poc_token=HAV8UWijqB3ImPSXecZHlOns7NRgpQw9y9EI2_fE&target_url=https%3A%2F%2Fmp.weixin.qq.com%2Fs%2FKIhH2nCURBXuFXAtYRpuXg%3F" target="_blank"> 加入我们 </a>  
  </span>
 
   
@@ -36,6 +40,9 @@
 ## 更新日志 <!-- omit in toc -->
 
 #### 📌 置顶
+
+
+* [2025.06.20] ⭐️⭐️⭐️ MiniCPM-o 的 ollama [官方仓库](https://ollama.com/openbmb)正式支持 MiniCPM-o 2.6 等模型啦，欢迎[一键使用](https://ollama.com/openbmb/minicpm-o2.6)！
 
 * [2025.03.01] 🚀🚀🚀 MiniCPM-o 系列的对齐技术 RLAIF-V 被 CVPR 2025 接收了！其[代码](https://github.com/RLHF-V/RLAIF-V)、[数据](https://huggingface.co/datasets/openbmb/RLAIF-V-Dataset)、[论文](https://arxiv.org/abs/2405.17220)均已开源。
 
@@ -107,6 +114,7 @@
   - [Mac 推理](#mac-推理)
   - [基于 llama.cpp、ollama、vLLM 的高效推理](#基于-llamacppollamavllm-的高效推理)
 - [微调](#微调)
+- [基于 MiniCPM-V \& MiniCPM-o 的更多项目](#基于-minicpm-v--minicpm-o-的更多项目)
 - [FAQs](#faqs)
 - [模型局限性](#模型局限性)
 
@@ -2441,6 +2449,17 @@ pip install vllm
 我们支持使用 SWIFT 框架微调 MiniCPM-V 系列模型。SWIFT 支持近 200 种大语言模型和多模态大模型的训练、推理、评测和部署。支持 PEFT 提供的轻量训练方案和完整的 Adapters 库支持的最新训练技术如 NEFTune、LoRA+、LLaMA-PRO 等。 
 
 参考文档：[MiniCPM-V 1.0](https://github.com/modelscope/swift/blob/main/docs/source/Multi-Modal/minicpm-v最佳实践.md)，[MiniCPM-V 2.0](https://github.com/modelscope/swift/blob/main/docs/source/Multi-Modal/minicpm-v-2最佳实践.md) [MiniCPM-V 2.6](https://github.com/modelscope/ms-swift/issues/1613).
+
+
+## 基于 MiniCPM-V & MiniCPM-o 的更多项目
+- [text-extract-api](https://github.com/CatchTheTornado/text-extract-api): 利用 OCR 和 Ollama 模型的本地化文档提取与解析API，支持PDF、Word、PPTX ![GitHub Repo stars](https://img.shields.io/github/stars/CatchTheTornado/text-extract-api)
+- [comfyui_LLM_party](https://github.com/heshengtao/comfyui_LLM_party): 基于 ComfyUI 的 LLM Agent 框架，用于构建并集成 LLM 工作流 ![GitHub Repo stars](https://img.shields.io/github/stars/heshengtao/comfyui_LLM_party)
+- [Ollama-OCR](https://github.com/imanoop7/Ollama-OCR): 通过 Ollama 调用视觉语言模型，从图像和 PDF 中提取文本的 OCR 工具 ![GitHub Repo stars](https://img.shields.io/github/stars/imanoop7/Ollama-OCR)
+- [comfyui-mixlab-nodes](https://github.com/MixLabPro/comfyui-mixlab-nodes): ComfyUI 多功能节点合集，支持工作流一键转APP、语音识别合成、3D等功能 ![GitHub Repo stars](https://img.shields.io/github/stars/MixLabPro/comfyui-mixlab-nodes)
+- [OpenAvatarChat](https://github.com/HumanAIGC-Engineering/OpenAvatarChat): 可在单台PC上完整运行的模块化、开源交互式数字人对话系统 ![GitHub Repo stars](https://img.shields.io/github/stars/HumanAIGC-Engineering/OpenAvatarChat)
+- [pensieve](https://github.com/arkohut/pensieve): 完全本地化、保护隐私的被动式屏幕记录工具，自动截屏并建立索引，可通过Web界面进行检索 ![GitHub Repo stars](https://img.shields.io/github/stars/arkohut/pensieve)
+- [paperless-gpt](https://github.com/icereed/paperless-gpt): 利用LLM和视觉模型，为 paperless-ngx 实现AI驱动的文档自动化处理与OCR功能 ![GitHub Repo stars](https://img.shields.io/github/stars/icereed/paperless-gpt)
+- [Neuro](https://github.com/kimjammer/Neuro): Neuro-Sama的复刻版，完全依赖消费级硬件上的本地模型运行 ![GitHub Repo stars](https://img.shields.io/github/stars/kimjammer/Neuro)
 
 ## FAQs
 点击查看 [FAQs](./docs/faqs.md)
